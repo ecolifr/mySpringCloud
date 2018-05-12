@@ -1,0 +1,18 @@
+application:
+  message:  Hello Phil
+spring:
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/jsp/
+  profiles:
+    include: druid-conf
+logging:
+  path: D://log.log
+customer:
+  name: xxx
+  age:  1
+#  data:
+#    mongodb:
+#      uri: mongodb://localhost:27017
+#      database: test
