@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import sample.config.LoadAdditionalYml;
 import sample.entity.Customer;
 
 @SpringBootApplication
@@ -24,7 +25,10 @@ public class SampleWebJspApplication extends SpringBootServletInitializer {
 		LOGGER.debug("开始测试");
 		LOGGER.info("开始测试");
 		LOGGER.error("开始测试");
-		SpringApplication.run(SampleWebJspApplication.class, args);
+//		SpringApplication.run(SampleWebJspApplication.class, args);
+		SpringApplication springApplication = new SpringApplication(SampleWebJspApplication.class);
+		springApplication.addListeners(new LoadAdditionalYml());
+		springApplication.run(args);
 	}
 
 }

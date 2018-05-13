@@ -8,4 +8,5 @@
     <select id="findAll" resultMap="BaseResultMap">
         SELECT * FROM mysql_user
     </select>
+
 </mapper>
