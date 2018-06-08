@@ -8,12 +8,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.PropertySource;
 import sample.config.LoadAdditionalYml;
 import sample.entity.Customer;
 
 @SpringBootApplication
 @EnableConfigurationProperties(value = Customer.class)
 @MapperScan("sample.mapper")
+@PropertySource(value = {"classpath:orange.yml"}, ignoreResourceNotFound = true)
 public class SampleWebJspApplication extends SpringBootServletInitializer {
 	private static final Logger LOGGER = LoggerFactory.getLogger(SampleWebJspApplication.class);
 	@Override

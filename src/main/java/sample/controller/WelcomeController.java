@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import sample.entity.Orange;
 import sample.mapper.MySQLUserMapper;
 import sample.entity.Customer;
 import sample.entity.User;
@@ -49,6 +50,8 @@ public class WelcomeController {
     private MySQLUserMapper mySQLUserMapper;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private Orange orange;
 
     @GetMapping("/")
     public String welcome( ModelMap model ) {
